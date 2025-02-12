@@ -12,12 +12,14 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+
 const db = new pg.Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-      rejectUnauthorized: false, // Required for Render PostgreSQL
-  },
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false, // Required for Render PostgreSQL
+    },
 });
+db.connect();
 
 
 // Get all Restaurants
