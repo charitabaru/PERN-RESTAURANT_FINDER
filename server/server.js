@@ -140,6 +140,11 @@ app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
   }
 });
 
+app.get('/api/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+
 app.listen(port, () => {
   console.log(`server is up and listening on port ${port}`);
 });
